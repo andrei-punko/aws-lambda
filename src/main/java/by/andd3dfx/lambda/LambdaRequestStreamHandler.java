@@ -11,6 +11,8 @@ public class LambdaRequestStreamHandler implements RequestStreamHandler {
 
     public void handleRequest(InputStream inputStream, OutputStream outputStream, Context context) throws IOException {
         String input = IOUtils.toString(inputStream, "UTF-8");
+        context.getLogger().log("Input: " + input);
+
         outputStream.write(("Hello World - " + input).getBytes());
     }
 }
