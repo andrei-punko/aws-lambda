@@ -16,13 +16,17 @@ Create Lambda functions:
 - MethodHandlerLambda
 - RequestHandlerLambda
 - StreamHandlerLambda
+- SavePersonHandlerLambda
 
-Upload result fat JAR from ./target folder into each Lambda function
+Upload result fat JAR from `./target` folder into each Lambda function
 
 Set appropriate handler in Runtime settings section (on Code tab) of each Lambda function:
-- by.andd3dfx.LambdaMethodHandler::handleRequest
-- by.andd3dfx.LambdaRequestHandler::handleRequest
-- by.andd3dfx.LambdaRequestStreamHandler::handleRequest
+- `by.andd3dfx.lambda.LambdaMethodHandler::handleRequest`
+- `by.andd3dfx.lambda.LambdaRequestHandler::handleRequest`
+- `by.andd3dfx.lambda.LambdaRequestStreamHandler::handleRequest`
+- `by.andd3dfx.lambda.LambdaSavePersonHandler::handleRequest`
+
+Create DynamoDB Table `Person` with Partition key `id`
 
 ## How to check
 From Test tab - send test event with some text in quotes
