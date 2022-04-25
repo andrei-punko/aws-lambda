@@ -28,6 +28,8 @@ Set appropriate handler in Runtime settings section (on Code tab) of each Lambda
 
 Create DynamoDB Table `Person` with Partition key `id`
 
+Created DynamoDB table should be in the same region that declared in `LambdaSavePersonHandler.REGION`
+
 ## How to check
 From Test tab - send test event with some text in quotes
 
