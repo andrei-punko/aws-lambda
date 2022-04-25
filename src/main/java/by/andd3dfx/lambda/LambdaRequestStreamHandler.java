@@ -1,4 +1,4 @@
-package by.andd3dfx;
+package by.andd3dfx.lambda;
 
 import com.amazonaws.services.lambda.runtime.Context;
 import com.amazonaws.services.lambda.runtime.RequestStreamHandler;
