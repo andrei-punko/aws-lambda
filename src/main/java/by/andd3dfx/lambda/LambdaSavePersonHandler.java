@@ -4,7 +4,7 @@ import by.andd3dfx.dto.PersonRequest;
 import by.andd3dfx.dto.PersonResponse;
 import com.amazonaws.regions.Region;
 import com.amazonaws.regions.Regions;
-import com.amazonaws.services.dynamodbv2.AmazonDynamoDBClient;
+import com.amazonaws.services.dynamodbv2.AmazonDynamoDBClientBuilder;
 import com.amazonaws.services.dynamodbv2.document.DynamoDB;
 import com.amazonaws.services.dynamodbv2.document.Item;
 import com.amazonaws.services.dynamodbv2.document.PutItemOutcome;
@@ -21,14 +21,19 @@ public class LambdaSavePersonHandler implements RequestHandler<PersonRequest, Pe
     private DynamoDB dynamoDb;
 
     public PersonResponse handleRequest(PersonRequest personRequest, Context context) {
-        initDynamoDbClient();
+        context.getLogger().log("Input: " + personRequest.toString());
 
         persistData(personRequest);
-
-        return new PersonResponse("Saved Successfully!!!");
+        return new PersonResponse("Saved to DynamoDB successfully!!!");
     }
 
     private PutItemOutcome persistData(PersonRequest personRequest) throws ConditionalCheckFailedException {
+        dynamoDb = new DynamoDB(
+            AmazonDynamoDBClientBuilder.standard()
+                .withRegion(Region.getRegion(REGION).getName())
+                .build()
+        );
+
         return dynamoDb.getTable(DYNAMODB_TABLE_NAME)
             .putItem(
                 new PutItemSpec().withItem(new Item()
@@ -37,11 +42,5 @@ public class LambdaSavePersonHandler implements RequestHandler<PersonRequest, Pe
                     .withString("lastName", personRequest.getLastName())
                     .withNumber("age", personRequest.getAge())
                     .withString("address", personRequest.getAddress())));
-    }
-
-    private void initDynamoDbClient() {
-        AmazonDynamoDBClient client = new AmazonDynamoDBClient();
-        client.setRegion(Region.getRegion(REGION));
-        dynamoDb = new DynamoDB(client);
     }
 }
