@@ -2,6 +2,8 @@
 # AWS Lambda usage example
 
 [![Java CI with Maven](https://github.com/andrei-punko/aws-lambda/actions/workflows/maven.yml/badge.svg)](https://github.com/andrei-punko/aws-lambda/actions/workflows/maven.yml)
+[![Coverage](.github/badges/jacoco.svg)](https://github.com/andrei-punko/aws-lambda/actions/workflows/gradle.yml)
+[![Branches](.github/badges/branches.svg)](https://github.com/andrei-punko/aws-lambda/actions/workflows/gradle.yml)
 
 Based on this article https://www.baeldung.com/java-aws-lambda
 
