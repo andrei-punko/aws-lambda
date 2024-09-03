@@ -9,7 +9,7 @@ Based on this article https://www.baeldung.com/java-aws-lambda
 
 ## Prerequisites
 - Maven 3
-- JDK 17
+- JDK 21
 
 ## How to build
     mvn clean install
