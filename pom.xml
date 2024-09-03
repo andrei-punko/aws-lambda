@@ -109,11 +109,6 @@
         <groupId>org.jacoco</groupId>
         <artifactId>jacoco-maven-plugin</artifactId>
         <version>0.8.12</version>
-        <configuration>
-          <excludes>
-            <exclude>**/dto/**</exclude>
-          </excludes>
-        </configuration>
         <executions>
           <execution>
             <goals>
@@ -121,13 +116,20 @@
             </goals>
           </execution>
           <execution>
-            <id>generate-code-coverage-report</id>
+            <id>report</id>
             <phase>prepare-package</phase>
             <goals>
               <goal>report</goal>
             </goals>
           </execution>
         </executions>
+        <configuration>
+          <excludes>
+            <exclude>**/configs/**</exclude>
+            <exclude>**/dto/**</exclude>
+            <exclude>**/entities/**</exclude>
+          </excludes>
+        </configuration>
       </plugin>
     </plugins>
   </build>
