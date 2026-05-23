@@ -1,7 +1,7 @@
 # AWS Lambda usage example
 
 [![Maven CI](https://github.com/andrei-punko/aws-lambda/actions/workflows/maven.yml/badge.svg)](https://github.com/andrei-punko/aws-lambda/actions/workflows/maven.yml)
-[![Coverage](.github/badges/jacoco.svg)](https://github.com/andrei-punko/aws-lambda/actions/workflows/gradle.yml)
+[![Coverage](.github/badges/jacoco.svg)](https://github.com/andrei-punko/aws-lambda/actions/workflows/maven.yml)
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
 
 Based on [article](https://www.baeldung.com/java-aws-lambda) on Baeldung portal
