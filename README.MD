@@ -1,10 +1,10 @@
 # AWS Lambda usage example
 
-[![Java CI with Maven](https://github.com/andrei-punko/aws-lambda/actions/workflows/maven.yml/badge.svg)](https://github.com/andrei-punko/aws-lambda/actions/workflows/maven.yml)
+[![Maven CI](https://github.com/andrei-punko/aws-lambda/actions/workflows/maven.yml/badge.svg)](https://github.com/andrei-punko/aws-lambda/actions/workflows/maven.yml)
 [![Coverage](.github/badges/jacoco.svg)](https://github.com/andrei-punko/aws-lambda/actions/workflows/gradle.yml)
-[![Branches](.github/badges/branches.svg)](https://github.com/andrei-punko/aws-lambda/actions/workflows/gradle.yml)
+[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
 
-Based on this article https://www.baeldung.com/java-aws-lambda
+Based on [article](https://www.baeldung.com/java-aws-lambda) on Baeldung portal
 
 ## Prerequisites
 
